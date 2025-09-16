@@ -15,4 +15,19 @@ public class CauThuService implements ICauThuService {
     public List<CauThu> findAll() {
         return cauThuRepository.findAll();
     }
+
+    @Override
+    public CauThu findById(int id) {
+        return cauThuRepository.findById(id);
+    }
+
+    @Override
+    public Boolean addCauThu(CauThu cauThu) {
+        return cauThuRepository.addCauThu(cauThu);
+    }
+
+    @Override
+    public void deleteCauThu(int id) {
+    cauThuRepository.deleteCauThu(id);
+    }
 }
