@@ -30,4 +30,9 @@ public class CauThuService implements ICauThuService {
     public void deleteCauThu(int id) {
     cauThuRepository.deleteCauThu(id);
     }
+
+    @Override
+    public void updateCauThu(CauThu cauThu) {
+        cauThuRepository.updateCauThu(cauThu);
+    }
 }

@@ -9,4 +9,5 @@ public interface ICauThuService {
     CauThu findById(int id);
     Boolean addCauThu(CauThu cauThu);
     void deleteCauThu(int id);
+    void updateCauThu(CauThu cauThu);
 }

@@ -42,14 +42,24 @@
 <body>
 <h2>Chi tiết Cầu Thủ</h2>
 <div class="detail-box">
-    <p><b>Mã Cầu Thủ:</b> ${cauthu.maCauThu}</p>
-    <p><b>Họ Tên:</b> ${cauthu.hoTen}</p>
-    <p><b>Ngày Sinh:</b> ${cauthu.ngaySinh}</p>
-    <p><b>Kinh Nghiệm:</b> ${cauthu.kinhNghiem}</p>
-    <p><b>Vị Trí:</b> ${cauthu.vitri}</p>
-    <img src="${pageContext.request.contextPath}${cauthu.image}"
+    <p><b>Mã Cầu Thủ:</b> ${cauThu.maCauThu}</p>
+    <p><b>Họ Tên:</b> ${cauThu.hoTen}</p>
+    <p><b>Ngày Sinh:</b> ${cauThu.ngaySinh}</p>
+    <p><b>Kinh Nghiệm:</b> ${cauThu.kinhNghiem}</p>
+    <p><b>Vị Trí:</b> ${cauThu.viTri}</p>
+    <p><b>Giới tính:</b>
+        <c:choose>
+            <c:when test="${cauThu.gender == true}">Nam</c:when>
+            <c:otherwise>Nữ</c:otherwise>
+        </c:choose>
+    </p>
+    <p><b>Môn học:</b>
+        <c:forEach items="${cauThu.subjects}" var="subject">
+            <span>${subject} </span>
+        </c:forEach>
+    </p>
+    <img src="${pageContext.request.contextPath}${cauThu.image}"
          alt="Ảnh cầu thủ" width="200"/>
 </div>
 </body>
 </html>
-

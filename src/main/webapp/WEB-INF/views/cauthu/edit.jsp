@@ -1,19 +1,29 @@
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%--
+  Created by IntelliJ IDEA.
+  User: NGUYEN DUC HIEU
+  Date: 18/09/2025
+  Time: 2:15 CH
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-    <title>Thêm mới Cầu Thủ</title>
+    <title>Chỉnh sửa Cầu Thủ</title>
 </head>
 <body>
-<h2>Thêm Cầu Thủ Mới</h2>
+<h2>Chỉnh Sửa Cầu Thủ</h2>
 
-<form:form action="${pageContext.request.contextPath}/Cauthu/add"
+<%-- đang lỗi --%>
+
+<form:form action="/Cauthu/edit"
            method="post"
            modelAttribute="cauThu">
 
-    <%-- Nếu maCauThu tự tăng thì ẩn, không nhập --%>
-    <form:hidden path="maCauThu"/>
+    <p>
+        <label>Mã Cầu Thủ:</label><br/>
+        <form:input path="maCauThu" required="true"/>
+    </p>
 
     <p>
         <label>Họ Tên:</label><br/>
@@ -27,12 +37,12 @@
 
     <p>
         <label>Kinh Nghiệm:</label><br/>
-        <form:input path="kinhNghiem" required="true"/>
+        <form:input path="kinhNghiem"/>
     </p>
 
     <p>
         <label>Vị Trí:</label><br/>
-        <form:input path="viTri" required="true"/>
+        <form:input path="viTri"/>
     </p>
 
     <p>
@@ -52,7 +62,7 @@
     </p>
 
     <p>
-        <button type="submit">Lưu</button>
+        <button type="submit">Cập nhật</button>
         <a href="${pageContext.request.contextPath}/Cauthu">Hủy</a>
     </p>
 
@@ -60,3 +70,4 @@
 
 </body>
 </html>
+

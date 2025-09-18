@@ -97,24 +97,40 @@
         <th>Kinh Nghiệm</th>
         <th>Vị Trí</th>
         <th>Hình Ảnh</th>
+        <th>Giới Tính</th>
+        <th>subject</th>
         <th>Thao Tác</th>
+
     </tr>
     </thead>
     <tbody>
-    <c:forEach items="${cauthuList}" var="cauthu" varStatus="status">
+    <c:forEach items="${cauthuList}" var="cauThu" varStatus="status">
         <tr>
             <td>${status.count}</td>
-            <td>${cauthu.maCauThu}</td>
-            <td>${cauthu.hoTen}</td>
-            <td>${cauthu.ngaySinh}</td>
-            <td>${cauthu.kinhNghiem}</td>
-            <td>${cauthu.vitri}</td>
+            <td>${cauThu.maCauThu}</td>
+            <td>${cauThu.hoTen}</td>
+            <td>${cauThu.ngaySinh}</td>
+            <td>${cauThu.kinhNghiem}</td>
+            <td>${cauThu.viTri}</td>
             <td>
-                <img src="${pageContext.request.contextPath}${cauthu.image}"
+                <img src="${pageContext.request.contextPath}${cauThu.image}"
                      alt="Ảnh cầu thủ" width="100" height="130"/>
             </td>
+            <td>
+                <c:choose>
+                    <c:when test="${cauThu.gender == true}">Nam</c:when>
+                    <c:otherwise>Nữ</c:otherwise>
+                </c:choose>
+            </td>
+            <td>
+                <c:forEach items="${cauThu.subjects}" var="subject">
+                    <span>${subject} </span>
+                </c:forEach>
+            </td>
             <td class="action-links">
-                <a href="${pageContext.request.contextPath}/Cauthu/delete/${cauthu.maCauThu}"
+                <a href="/Cauthu/detail/${cauThu.maCauThu}">Chi tiết</a>
+                <a href="/Cauthu/edit/${cauThu.maCauThu}">Cập Nhật</a>
+                <a href="/Cauthu/delete/${cauThu.maCauThu}"
                    onclick="return confirm('Bạn có chắc muốn xóa cầu thủ này?');">Xóa</a>
             </td>
         </tr>

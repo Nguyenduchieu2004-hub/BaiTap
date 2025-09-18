@@ -1,71 +1,94 @@
 package com.example.cauthu.entity;
 
-import java.awt.*;
 import java.time.LocalDate;
-import java.util.Locale;
+import java.util.List;
 
 public class CauThu {
-    private  int MaCauThu;
-    private String HoTen;
-    private LocalDate NgaySinh;
-    private String KinhNghiem ;
-    private String Vitri ;
-    private String Image;
+    private int maCauThu;
+    private String hoTen;
+    private LocalDate ngaySinh;
+    private String kinhNghiem;
+    private String viTri;
+    private String image;
+    private boolean gender;
+    private List<String> subjects;
 
-    public CauThu(int maCauThu, String hoTen, LocalDate ngaySinh, String kinhNghiem, String vitri, String image) {
-        MaCauThu = maCauThu;
-        HoTen = hoTen;
-        NgaySinh = ngaySinh;
-        KinhNghiem = kinhNghiem;
-        Vitri = vitri;
-        Image = image;
+    public CauThu() {
+    }
+
+    public CauThu(int maCauThu, String hoTen, LocalDate ngaySinh, String kinhNghiem,
+                  String viTri, String image, boolean gender, List<String> subjects) {
+        this.maCauThu = maCauThu;
+        this.hoTen = hoTen;
+        this.ngaySinh = ngaySinh;
+        this.kinhNghiem = kinhNghiem;
+        this.viTri = viTri;
+        this.image = image;
+        this.gender = gender;
+        this.subjects = subjects;
     }
 
     public int getMaCauThu() {
-        return MaCauThu;
+        return maCauThu;
     }
 
     public void setMaCauThu(int maCauThu) {
-        MaCauThu = maCauThu;
+        this.maCauThu = maCauThu;
     }
 
     public String getHoTen() {
-        return HoTen;
+        return hoTen;
     }
 
     public void setHoTen(String hoTen) {
-        HoTen = hoTen;
+        this.hoTen = hoTen;
     }
 
     public LocalDate getNgaySinh() {
-        return NgaySinh;
+        return ngaySinh;
     }
 
     public void setNgaySinh(LocalDate ngaySinh) {
-        NgaySinh = ngaySinh;
+        this.ngaySinh = ngaySinh;
     }
 
     public String getKinhNghiem() {
-        return KinhNghiem;
+        return kinhNghiem;
     }
 
     public void setKinhNghiem(String kinhNghiem) {
-        KinhNghiem = kinhNghiem;
+        this.kinhNghiem = kinhNghiem;
     }
 
-    public String getVitri() {
-        return Vitri;
+    public String getViTri() {
+        return viTri;
     }
 
-    public void setVitri(String vitri) {
-        Vitri = vitri;
+    public void setViTri(String viTri) {
+        this.viTri = viTri;
     }
 
     public String getImage() {
-        return Image;
+        return image;
     }
 
     public void setImage(String image) {
-        Image = image;
+        this.image = image;
+    }
+
+    public boolean isGender() {
+        return gender;
+    }
+
+    public void setGender(boolean gender) {
+        this.gender = gender;
+    }
+
+    public List<String> getSubjects() {
+        return subjects;
+    }
+
+    public void setSubjects(List<String> subjects) {
+        this.subjects = subjects;
     }
 }
